@@ -12,6 +12,7 @@ void Contact::add() {
 }
 
 void Contact::set(std::string& target, std::string value) {
+	target = "";
 	for(int i = 0; i < value.size(); ++i) {
 		target += value[i];
 	}

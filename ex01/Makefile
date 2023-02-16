@@ -3,7 +3,8 @@ CC = clang++
 CPPFLAG = -std=c++98 -Wall -Wextra -Werror
 
 SRC = PhoneBook.cpp \
-		Contact.cpp
+		Contact.cpp \
+		main.cpp
 
 RM = rm -f
 TARGET = phonebook

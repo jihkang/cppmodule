@@ -58,6 +58,8 @@ void PhoneBook::run() {
 	{ 
 		std::cout << "what are you doing?\n";
 		std::getline(std::cin, data);
+		if (data == "\0")
+			break ;
 		if (data == "add") {
 			this->add();
 		} else if (data == "search") {
