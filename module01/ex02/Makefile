@@ -2,18 +2,16 @@
 CC = clang++ 
 CPPFLAG = -std=c++98 -Wall -Wextra -Werror
 
-SRC = PhoneBook.cpp \
-		Contact.cpp \
-		main.cpp
-
+SRC = main.cpp 
+	
 RM = rm -f
-TARGET = phonebook
+TARGET = brain
 
 OBJ = $(SRC:.cpp=.o)
 
 all : $(TARGET)
 
-$(TARGET) :  $(OBJ)
+$(TARGET) : $(OBJ)
 	$(CC) $(CPPFLAG) $(OBJ) -o $(TARGET)
 
 clean : 

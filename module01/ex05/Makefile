@@ -2,16 +2,20 @@
 CC = clang++ 
 CPPFLAG = -std=c++98 -Wall -Wextra -Werror
 
-SRC = megaphone.cpp
+SRC = main.cpp \
+	Harl.cpp
+
+	
+
 RM = rm -f
-TARGET = megaphone
+TARGET = harl
 
 OBJ = $(SRC:.cpp=.o)
 
 all : $(TARGET)
 
 $(TARGET) : $(OBJ)
-	$(CC) $(CPPFLAG) $< -o $(TARGET)
+	$(CC) $(CPPFLAG) $(OBJ) -o $(TARGET)
 
 clean : 
 	$(RM) $(OBJ)
