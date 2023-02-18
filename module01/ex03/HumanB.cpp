@@ -1,7 +1,11 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : name(name) {}
-HumanB::~HumanB() {}
+HumanB::HumanB(std::string name) : name(name) {
+	std::cout << "constructor" << std::endl;
+}
+HumanB::~HumanB() {
+	std::cout << "destroy" << std::endl;
+}
 
 void HumanB::setWeapon(Weapon& weapon) {
 	this->weapon = &weapon;
@@ -9,5 +13,6 @@ void HumanB::setWeapon(Weapon& weapon) {
 
 void HumanB::attack()
 {
-	std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
+	if (this->weapon)
+		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
 }

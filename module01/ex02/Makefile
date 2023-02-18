@@ -1,5 +1,5 @@
 
-CC = clang++ 
+CC = c++ 
 CPPFLAG = -std=c++98 -Wall -Wextra -Werror
 
 SRC = main.cpp 
@@ -8,6 +8,9 @@ RM = rm -f
 TARGET = brain
 
 OBJ = $(SRC:.cpp=.o)
+
+%.o:%.cpp
+	$(CC) $(CPPFLAG) -c $< -o $@ -I.
 
 all : $(TARGET)
 

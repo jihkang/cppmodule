@@ -1,7 +1,11 @@
 #include "Harl.hpp"
 
-Harl::Harl()
-{
+Harl::Harl() {
+	std::cout << "Constructor" << std::endl;
+}
+
+Harl::~Harl() {
+	std::cout<<"Destroy"<<std::endl;
 }
 
 void Harl::complain(std::string level) {

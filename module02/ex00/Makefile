@@ -2,16 +2,17 @@
 CC = c++ 
 CPPFLAG = -std=c++98 -Wall -Wextra -Werror
 
-SRC = main.cpp \
-	
+SRC = Fixed.cpp \
+	main.cpp
+
 RM = rm -f
-TARGET = sed 
+TARGET = fixed 
 
 OBJ = $(SRC:.cpp=.o)
 
 %.o:%.cpp
 	$(CC) $(CPPFLAG) -c $< -o $@ -I.
-	
+
 all : $(TARGET)
 
 $(TARGET) : $(OBJ)

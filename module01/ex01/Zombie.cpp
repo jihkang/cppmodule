@@ -1,10 +1,17 @@
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(){}
-Zombie::Zombie(std::string _name) :name(_name) {}
+Zombie::Zombie(){
+	std::cout << "initalize" << std::endl;
+}
 
-Zombie::~Zombie() {}
+Zombie::Zombie(std::string _name) :name(_name) {
+	std::cout << "initalize"<< std::endl;
+}
+
+Zombie::~Zombie() {
+	std::cout << "Destroy" << std::endl;
+}
 
 void Zombie::announce() {
 	std::cout << name << ": BraiiiiiiinnnzzzZ...\n";

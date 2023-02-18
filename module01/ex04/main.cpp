@@ -41,7 +41,10 @@ void strReplace(std::string& src, char *find, char *rep)
 int main(int ac, char **av)
 {
 	if (ac != 4)
+	{
+		std::cout << "argument error" << std::endl;
 		return 0;
+	}
 	std::ifstream readFile;
 	std::string file = av[1];
 	std::string readResult;
@@ -59,6 +62,9 @@ int main(int ac, char **av)
 			writeFile.close();
 		}
 		readFile.close();
+	}
+	else {
+		std::cout << "read file cannot open" <<std::endl;
 	}
 	return 0;
 }
