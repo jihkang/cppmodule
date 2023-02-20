@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/gangjiho/Desktop/42seoul/cppmodule/cppmodule/module02/ex00",
+      "program": "/Users/gangjiho/Desktop/42seoul/cppmodule/cppmodule/module02/ex00/build/Debug/outDebug"
+    }
+  ]
+}
