@@ -11,9 +11,8 @@ Fixed::Fixed(Fixed const &fix)
 	*this = fix;
 }
 
-Fixed::Fixed(float f)  : value(f * (1 << this->bits))
+Fixed::Fixed(float f) : value(f * (1 << this->bits))
 {
-
 }
 
 Fixed::Fixed(int v) : value (v * (1 << this->bits)) 
@@ -142,13 +141,13 @@ bool Fixed::operator!= (Fixed const &obj) const
 
 Fixed& Fixed::operator++(void)
 {
-	this->setRawBits(this->getRawBits() + 256);
+	this->setRawBits(this->getRawBits() + 1);
 	return (*this);
 }
 
 Fixed& Fixed::operator--(void)
 {
-	this->setRawBits(this->getRawBits() - 256);
+	this->setRawBits(this->getRawBits() - 1);
 	return (*this);
 }
 
@@ -158,7 +157,7 @@ Fixed Fixed::operator++(int value)
 
 	if (!value)
 		value = 1;
-	this->setRawBits(this->getRawBits() + value * (1 << this->bits));
+	this->setRawBits(this->getRawBits() + value);
 	return (tmp);
 }
 
@@ -168,6 +167,6 @@ Fixed Fixed::operator--(int value)
 
 	if (!value)
 		value = 1;
-	this->setRawBits(this->getRawBits() - value * (1 << this->bits)) ;
+	this->setRawBits(this->getRawBits() - value);
 	return (tmp);
 }
