@@ -1,6 +1,6 @@
 
 CC = c++ 
-CPPFLAG = -std=c++98 -Wall -Wextra -Werror
+CPPFLAG = -std=c++98 -Wall -Wextra -Werror #-fsanitize=address 
 
 SRC = Fixed.cpp \
 	main.cpp

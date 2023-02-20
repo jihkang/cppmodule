@@ -21,7 +21,7 @@ Fixed::Fixed(float f)
 Fixed::Fixed(int v)
 {
 	std::cout << "int constructor called" << std::endl;
-	this->setRawBits(static_cast<const int>(v));
+	this->value = v * (1 << 8);
 }
 
 Fixed::~Fixed() {
@@ -46,19 +46,19 @@ float Fixed::toFloat(void) const {
 }
 
 int Fixed::getRawBits(void) const {
-	return ((this->value / (1 << this->bits)));
+	return this->value;
 }
 
 void Fixed::setRawBits(int const raw) {
-	this->value = raw * (1 << this->bits);
+	this->value = raw;
 }
 
 void Fixed::correctPrint(std::ostream& os) const {
 	int value;
 
-	value = this->value;
-	if ((value / (1 << this->bits) * 256) == value) {
-		os << this->getRawBits();
+	value = this->getRawBits();
+	if (value % 256 == 0) {
+		os << value / (1 << 8);
 	} else {
 		os << static_cast<float>(value) / (1 << 8)<<"f";
 	}
