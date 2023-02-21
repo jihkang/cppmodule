@@ -1,14 +1,16 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void) : ClapTrap() 
+FragTrap::FragTrap(void)
 {
+	this->name = "no name";
 	this->setHp(100);
 	this->setEp(100);
 	this->setAttackDamage(30);
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name)
 {
+	this->name = name;
 	this->setHp(100);
 	this->setEp(100);
 	this->setAttackDamage(30);
@@ -17,6 +19,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap &obj) {
 	std::cout << "Frag Trap copy kkkkk!" << std::endl;
+	this->name = obj.name;
 	this->setHp(obj.hp);
 	this->setEp(obj.ep);
 	this->setAttackDamage(obj.attackDamage);
@@ -25,6 +28,7 @@ FragTrap::FragTrap(const FragTrap &obj) {
 FragTrap& FragTrap::operator=(const FragTrap &obj)
 {
 	std::cout << "Copy Frag data..." << std::endl;
+	this->name = obj.name;
 	this->setHp(obj.hp);
 	this->setEp(obj.ep);
 	this->setAttackDamage(obj.attackDamage);

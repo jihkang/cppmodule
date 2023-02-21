@@ -19,6 +19,5 @@ int main()
 		frag.highFivesGuys();
 		clap.attack("test");
 	}
-
 	return 0;
 }

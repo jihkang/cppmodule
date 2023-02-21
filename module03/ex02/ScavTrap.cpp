@@ -1,14 +1,16 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void) : ClapTrap() {
+ScavTrap::ScavTrap(void) {
 	std::cout << "Scav default constructor"<< std::endl;
+	this->name = "no named";
 	this->setHp(100);
 	this->setEp(50);
 	this->setAttackDamage(20);
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+ScavTrap::ScavTrap(std::string name) {
 	std::cout << "Scav is Constructor!" << std::endl;
+	this->name = name;
 	this->setHp(100);
 	this->setEp(50);
 	this->setAttackDamage(20);
@@ -16,6 +18,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 
 ScavTrap::ScavTrap(const ScavTrap& obj) {
 	std::cout << "Scav copy constructor" << std::endl;
+	this->name = obj.name;
 	this->setHp(obj.hp);
 	this->setEp(obj.ep);
 	this->setAttackDamage(obj.attackDamage);	
@@ -26,6 +29,7 @@ ScavTrap::~ScavTrap(void) {
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &obj) {
+	this->name = obj.name;
 	this->setHp(obj.hp);
 	this->setEp(obj.ep);
 	this->setAttackDamage(obj.attackDamage);
@@ -39,7 +43,6 @@ void	ScavTrap::attack(const std::string& target) {
 }
 
 void	ScavTrap::guardGate(void) {
-
 	std::cout <<" [Scav is running] " << std::endl;
 	std::cout <<" Gate keeper mode..." << std::endl;
 }
