@@ -151,7 +151,7 @@ Fixed& Fixed::operator--(void)
 	return (*this);
 }
 
-Fixed Fixed::operator++(int value)
+const Fixed Fixed::operator++(int value)
 {
 	Fixed	tmp(*this);
 
@@ -161,7 +161,7 @@ Fixed Fixed::operator++(int value)
 	return (tmp);
 }
 
-Fixed Fixed::operator--(int value)
+const Fixed Fixed::operator--(int value)
 {
 	Fixed	tmp(*this);
 

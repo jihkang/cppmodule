@@ -28,8 +28,8 @@ public:
 	bool operator!= (Fixed const &obj) const;
 	Fixed& operator-- ();
 	Fixed& operator++ ();
-	Fixed operator++(int);
-	Fixed operator--(int);
+	const Fixed operator++(int);
+	const Fixed operator--(int);
 	static Fixed& max(Fixed& a, Fixed& b);
 	static Fixed& min(Fixed& a, Fixed& b);
 	static const Fixed& max(Fixed const & a, Fixed const & b);

@@ -3,11 +3,8 @@
 
 int main()
 {
-	ClapTrap clap("asdf");
-	clap.attack("asdf");
-	ScavTrap scav("test");
-	scav.attack("asdf");
-	scav.guardGate();
+	ClapTrap test(ScavTrap("asdf"));
+	test.attack("a");
 
 	return 0;
 }

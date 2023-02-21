@@ -15,7 +15,9 @@ int main()
 	}
 	{
 		FragTrap frag("fragship");
+		ClapTrap clap(FragTrap("legend"));
 		frag.highFivesGuys();
+		clap.attack("test");
 	}
 
 	return 0;

@@ -72,7 +72,8 @@ void ClapTrap::attack(const std::string& target) {
 
 void ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << this->name << "has been damaged must to repair..." << std::endl;
-	this->hp -= amount;
+	if (this->hp >= amount)
+		this->hp -= amount;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
