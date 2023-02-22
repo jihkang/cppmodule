@@ -2,7 +2,7 @@
 CC = c++ 
 CPPFLAG = -std=c++98 -Wall -Wextra -Werror
 
-TARGET = brainanimal
+TARGET = abstractAnimal
 
 SRC= main.cpp \
 	Animal.cpp \
@@ -11,7 +11,7 @@ SRC= main.cpp \
 	Brain.cpp \
 	WrongAnimal.cpp \
 	WrongDog.cpp \
-	WrongCat.cpp
+	WrongCat.cpp 
 
 RM = rm -f
 
