@@ -23,6 +23,6 @@ int main()
 		delete j2;
 		delete j;
 	}
-	// system("leaks brainanimal");
+	system("leaks abstractAnimal");
 	return 0;
 }
