@@ -47,13 +47,10 @@ void test_other(void) {
   me->unequip(3);
   bob->equip(tmp1);
   bob->equip(tmp2);
-
   me->use(0, *bob);
   me->use(1, *bob);
-
   bob->use(0, *me);
   bob->use(1, *me);
-
 	delete bob;
 	delete me;
 	delete src;

@@ -2,7 +2,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <exception>
 
 class Bureaucrat{
