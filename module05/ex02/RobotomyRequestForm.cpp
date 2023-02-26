@@ -19,7 +19,7 @@ void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
 	if (this->getToExecute() < executor.getGrade()) {
 		throw Bureaucrat::GradeTooLowException();
 	}
-	int result = random() % 10;
+	int result = rand() % 10;
 	if (result >= 5) {
 		throw RobotomyRequestForm::RobotError();
 	}

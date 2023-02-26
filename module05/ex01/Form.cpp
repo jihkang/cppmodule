@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form() : name("no name"), isSigned(false), toSign(5), toExecute(5) {}
+Form::Form() : name("no name"), isSigned(false), toSign(5), toExecute(5){}
 
 Form::~Form() {}
 
