@@ -1,11 +1,10 @@
 
 CXX = c++ 
-CPPFLAG = -std=c++98 -Wall -Wextra -Werror -fsanitize=address -g3
+CPPFLAG = -std=c++98 -Wall -Wextra -Werror# -fsanitize=address -g3
 
-NAME = scalarconverter 
+NAME = convert 
 
-SRC= ScalarConverter.cpp \
-	main.cpp
+SRC= main.cpp ScalarConverter.cpp
 
 RM = rm -f
 
