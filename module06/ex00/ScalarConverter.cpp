@@ -28,15 +28,15 @@ bool isAlpha(char c) {
 void printInf(int sign) {
 	std::cout << "char : impossible" << std::endl;
 	if (sign == 1) {
-		std::cout << "int : +inf" << std::endl;
+		std::cout << "int : impossible" << std::endl;
 		std::cout << "float : +inff"<< std::endl;
 		std::cout << "double : +inf" << std::endl;
 	} else if (sign == 0) {
-		std::cout << "int : inf" << std::endl;
+		std::cout << "int : impossible" << std::endl;
 		std::cout << "float : inff"<< std::endl;
 		std::cout << "double : inf" << std::endl;
 	} else {
-		std::cout << "int : -inf" << std::endl;
+		std::cout << "int : impossible" << std::endl;
 		std::cout << "float : -inff"<< std::endl;
 		std::cout << "double : -inf" << std::endl;
 	}
@@ -139,12 +139,38 @@ void ScalarConverter::convert(std::string str) {
 	}
 	if (isSpecific) {
 		printSpecific(checker[i]);
+		return ;
 	} else {
-		double ret = atof(str.c_str());
-		printChar(ret);
-		printInt(ret);
-		printFloat(ret);
-		printDouble(ret);		
-	}
+		bool	charact = false;
+		double ret;
+		int i = 0;
+		bool dot = false;
+		if (str[i] == '-' || str[i] == '+')
+			++i;
+			for (; i < str[i]; ++i) {
+				if (dot == false && str[i] == '.'){
+					dot = true;
+					continue ;
+				}
+				if (charact || (i >= 1 && !(str[i] >= '0' && str[i] <= '9'))) {
+					std::cout << "char : impossible" << std::endl;
+					std::cout << "int : impossible" << std::endl;
+					std::cout << "float : impossible" << std::endl;
+					std::cout << "double : impossible" << std::endl;
+					return ;
+				}
+				if (!(str[i] >= '0' && str[i] <= '9')) {
+					charact = true;
+				}
+			}
+			if (i == 1 && !(str[i - 1] >= '0' && str[i - 1] <= '9')) {
+				ret = static_cast<double>(str[i - 1]);
+			} else{
+				ret = atof(str.c_str());
+			}
+			printChar(ret);
+			printInt(ret);
+			printFloat(ret);
+			printDouble(ret);	
+		}
 }
-
