@@ -53,6 +53,13 @@
 		"deque": "cpp",
 		"fstream": "cpp",
 		"iomanip": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"vector": "cpp",
+		"__node_handle": "cpp",
+		"__tree": "cpp",
+		"map": "cpp",
+		"optional": "cpp",
+		"iterator": "cpp",
+		"version": "cpp"
 	}
 }

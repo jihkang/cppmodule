@@ -17,35 +17,42 @@ public:
 		*this = stack;
 	}
 	MutantStack<T>& operator= (const MutantStack<T>& stack) {
-		if (*this == stack)
-		{
+		if (*this == stack) {
 			return (*this);
 		}
 		this->c = stack.c;
 	}
+
   iterator begin() {
 		return this->c.begin();
 	}
+
 	iterator end() {
 		return this->c.end();
 	}
+
 	reverse_iterator rbegin() {
 		return this->c.rbegin();
 	}
+
 	reverse_iterator rend() {
 		return this->c.rend();
 	}
+
 	const_iterator cbegin() {
-		return this->c.cbegin();
+		return this->c.begin();
 	}
+
 	const_iterator cend() {
-		return this->c.cend();
+		return this->c.end();
 	}
+
 	const_reverse_iterator crbegin() {
-		return this->c.crbegin();
+		return this->c.rbegin();
 	}
+
 	const_reverse_iterator crend() {
-		return this->c.crend();
+		return this->c.rend();
 	}
 };
 

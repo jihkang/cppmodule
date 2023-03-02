@@ -12,7 +12,7 @@ public:
 	}
 	Array<T>(int amount) : _size(amount) {
 		if (amount < 0) {
-			throw (std::overflow_error("cant make deposite value"));
+			throw (std::overflow_error(this->indexDeposit()));
 		}
 		data = new T [amount];
 	}
@@ -36,8 +36,10 @@ public:
 	}
 
 	T& operator[] (const int idx) const {
-		if (idx >= _size || idx < 0) {
-			throw (std::overflow_error("Index out of bounds"));
+		if (idx >= _size) {
+			throw (std::overflow_error(this->indexOutouf()));
+		} else if (idx < 0) {
+			throw (std::overflow_error(this->indexDeposit()));
 		}
 		return (this->data[idx]);
 	}
@@ -45,7 +47,12 @@ public:
 	int size() const {
 		return (_size);
 	}
-
+	const char * indexDeposit() const {
+		return ("cant deposite value");
+	}
+	const char * indexOutouf() const {
+		return ("Index out of bounds");
+	}
 private:
 	T* data;
 	int _size;

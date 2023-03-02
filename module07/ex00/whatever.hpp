@@ -8,6 +8,7 @@ void swap(T& a, T& b) {
 	a = b;
 	b = c;
 }
+
 template <typename T>
 T max(T& a, T& b) {
 	if (a > b) {
