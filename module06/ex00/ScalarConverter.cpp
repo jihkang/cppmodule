@@ -21,10 +21,6 @@ ScalarConverter& ScalarConverter::operator= (const ScalarConverter& scalar) {
 	return (*this);
 }
 
-bool isAlpha(char c) {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
-}
-
 void printInf(int sign) {
 	std::cout << "char : impossible" << std::endl;
 	if (sign == 1) {
@@ -140,37 +136,39 @@ void ScalarConverter::convert(std::string str) {
 	if (isSpecific) {
 		printSpecific(checker[i]);
 		return ;
-	} else {
-		bool	charact = false;
-		double ret;
-		int i = 0;
-		bool dot = false;
+	}
+	else {
+		i = 0;
+		bool		charact = false;
+		double	ret;
+		bool		dot = false;
 		if (str[i] == '-' || str[i] == '+')
 			++i;
-			for (; i < str[i]; ++i) {
-				if (dot == false && str[i] == '.'){
-					dot = true;
-					continue ;
-				}
-				if (charact || (i >= 1 && !(str[i] >= '0' && str[i] <= '9'))) {
-					std::cout << "char : impossible" << std::endl;
-					std::cout << "int : impossible" << std::endl;
-					std::cout << "float : impossible" << std::endl;
-					std::cout << "double : impossible" << std::endl;
-					return ;
-				}
-				if (!(str[i] >= '0' && str[i] <= '9')) {
-					charact = true;
-				}
+		for (; i < str[i]; ++i) {
+			if (dot == false && str[i] == '.'){
+				dot = true;
+				continue ;
 			}
-			if (i == 1 && !(str[i - 1] >= '0' && str[i - 1] <= '9')) {
-				ret = static_cast<double>(str[i - 1]);
-			} else{
-				ret = atof(str.c_str());
+			if (charact || (i >= 1 && !(str[i] >= '0' && str[i] <= '9'))) {
+				std::cout << "char : impossible" << std::endl;
+				std::cout << "int : impossible" << std::endl;
+				std::cout << "float : impossible" << std::endl;
+				std::cout << "double : impossible" << std::endl;
+				return ;
 			}
-			printChar(ret);
-			printInt(ret);
-			printFloat(ret);
-			printDouble(ret);	
+			if (!(str[i] >= '0' && str[i] <= '9')) {
+				charact = true;
+			}
 		}
+		if (i == 1 && !(str[i - 1] >= '0' && str[i - 1] <= '9')) {
+			ret = static_cast<double>(str[i - 1]);
+		}
+		else {
+			ret = atof(str.c_str());
+		}
+		printChar(ret);
+		printInt(ret);
+		printFloat(ret);
+		printDouble(ret);	
+	}
 }
